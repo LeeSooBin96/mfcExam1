@@ -12,6 +12,7 @@
 #define new DEBUG_NEW
 #endif
 
+#pragma comment(linker,"/entry:wWinMainCRTStartup /subsystem:console")
 
 // 응용 프로그램 정보에 사용되는 CAboutDlg 대화 상자입니다.
 
@@ -176,4 +177,11 @@ void CgPrjDlg::OnDestroy()
 
 	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
 	if (m_pDlgImage) delete m_pDlgImage; //메모리 해제
+}
+#include <iostream>
+//자식 창이 호출하게할 함수
+void CgPrjDlg::callFunc(int n)
+{
+	int nData = n;
+	std::cout << n << std::endl;
 }
