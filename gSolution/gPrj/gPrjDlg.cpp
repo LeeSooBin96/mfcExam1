@@ -66,6 +66,7 @@ BEGIN_MESSAGE_MAP(CgPrjDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BTN_DLG, &CgPrjDlg::OnBnClickedBtnDlg)
+	ON_WM_DESTROY()
 END_MESSAGE_MAP()
 
 
@@ -101,6 +102,10 @@ BOOL CgPrjDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
+	m_pDlgImage = new CDlgImage; //new -> delete 있어야함!
+	m_pDlgImage->Create(IDD_CDlgImage, this); //ID, 메인 창(부모 다이얼로그)
+	m_pDlgImage->ShowWindow(SW_SHOW); //이렇게 모달리스트 대화창으로 하면 둘다 조작 가능!
+
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
@@ -155,9 +160,20 @@ HCURSOR CgPrjDlg::OnQueryDragIcon()
 }
 
 
-
 void CgPrjDlg::OnBnClickedBtnDlg()
 {
 	// gitTest
+	//여러 다이얼로그 창 띄우기
+	//CDlgImage dlg; //빨간 줄 뜨면 include 안한것
+	//dlg.DoModal(); //창 띄우기 --이렇게만 하면 이 창이 닫힐때까지 원래 창으로 돌아가지 못함 => 그래서 모달리스트 다이얼로그 사용!
+	m_pDlgImage->ShowWindow(SW_SHOW);
+}
 
+
+void CgPrjDlg::OnDestroy()
+{
+	CDialogEx::OnDestroy();
+
+	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
+	if (m_pDlgImage) delete m_pDlgImage; //메모리 해제
 }
