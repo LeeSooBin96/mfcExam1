@@ -51,7 +51,7 @@ BOOL CDlgImage::OnInitDialog()
 
 	// TODO:  여기에 추가 초기화 작업을 추가합니다.
 	//AfxMessageBox(_T("Ready?")); //함수 작동 확인
-	MoveWindow(0, 0, 320, 240);
+	MoveWindow(0, 0, 640, 480);
 
 	InitImage();
 	
@@ -60,21 +60,23 @@ BOOL CDlgImage::OnInitDialog()
 }
 
 
-void CDlgImage::OnPaint()
+void CDlgImage::OnPaint() //화면이 갱신될 필요가 있을때마다 자동 호출!
 {
 	CPaintDC dc(this); // device context for painting
 	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
 	if (m_Image) {
 		m_Image.Draw(dc, 0, 0);
 	}
+
+	drawData(&dc);
 	// 그리기 메시지에 대해서는 CDialogEx::OnPaint()을(를) 호출하지 마십시오.
 }
 
 void CDlgImage::InitImage()
 {
 	//이제 그러면 창 생성과 동시에 이미지 그리도록
-	int nWidth = 320;
-	int nHeight = 240;
+	int nWidth = 4096*8;
+	int nHeight = 4096*8;
 	int nBpp = 8;
 
 	m_Image.Create(nWidth, -nHeight, nBpp);
@@ -93,4 +95,19 @@ void CDlgImage::InitImage()
 
 	memset(fm, 0xff, nWidth * nHeight);
 
+}
+
+void CDlgImage::drawData(CDC* pDC)
+{
+	CRect rect;
+	CPen pen; //색을 바꿔보자
+	pen.CreatePen(PS_SOLID, 2, RGB(0xff, 0, 0)); //직선(실선)-선모양, 두께 , 색상
+	CPen* pOldPen = pDC->SelectObject(&pen); //현재 펜 저장
+	//pDC->Ellipse(rect); //원 또는 타원 그리기 --입력된 사각형 기준
+	for (int i = 0; i < m_nDataCount; i++) {
+		rect.SetRect(m_ptData[i], m_ptData[i]);
+		rect.InflateRect(1, 1); 
+		pDC->Ellipse(rect);
+	}
+	pDC->SelectObject(pOldPen); //펜 되돌리기
 }

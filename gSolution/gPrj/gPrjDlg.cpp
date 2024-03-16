@@ -14,6 +14,8 @@
 
 #pragma comment(linker,"/entry:wWinMainCRTStartup /subsystem:console")
 
+#define MAX_POINT 100
+
 // 응용 프로그램 정보에 사용되는 CAboutDlg 대화 상자입니다.
 
 class CAboutDlg : public CDialogEx
@@ -66,8 +68,13 @@ BEGIN_MESSAGE_MAP(CgPrjDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_BN_CLICKED(IDC_BTN_DLG, &CgPrjDlg::OnBnClickedBtnDlg)
+	//ON_BN_CLICKED(IDC_BTN_DLG, &CgPrjDlg::OnBnClickedBtnDlg) 
 	ON_WM_DESTROY()
+	ON_BN_CLICKED(IDC_BTN_TEST, &CgPrjDlg::OnBnClickedBtnTest)
+	ON_BN_CLICKED(IDC_BTN_PROCESS, &CgPrjDlg::OnBnClickedBtnProcess)
+	ON_BN_CLICKED(IDC_BTN_MAKE_PATTERN, &CgPrjDlg::OnBnClickedBtnMakePattern)
+	ON_BN_CLICKED(IDC_BTN_GET_DATA, &CgPrjDlg::OnBnClickedBtnGetData)
+	ON_BN_CLICKED(IDC_BTN_THREAD, &CgPrjDlg::OnBnClickedBtnThread)
 END_MESSAGE_MAP()
 
 
@@ -103,10 +110,15 @@ BOOL CgPrjDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
+	MoveWindow(0, 0, 1280, 800);
 	m_pDlgImage = new CDlgImage; //new -> delete 있어야함!
 	m_pDlgImage->Create(IDD_CDlgImage, this); //ID, 메인 창(부모 다이얼로그)
 	m_pDlgImage->ShowWindow(SW_SHOW); //이렇게 모달리스트 대화창으로 하면 둘다 조작 가능!
 
+	m_pDlgImgResult = new CDlgImage;
+	m_pDlgImgResult->Create(IDD_CDlgImage, this);
+	m_pDlgImgResult->ShowWindow(SW_SHOW);
+	m_pDlgImgResult->MoveWindow(640, 0, 640, 480);
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
@@ -161,14 +173,14 @@ HCURSOR CgPrjDlg::OnQueryDragIcon()
 }
 
 
-void CgPrjDlg::OnBnClickedBtnDlg()
-{
+//void CgPrjDlg::OnBnClickedBtnDlg()
+//{
 	// gitTest
 	//여러 다이얼로그 창 띄우기
 	//CDlgImage dlg; //빨간 줄 뜨면 include 안한것
 	//dlg.DoModal(); //창 띄우기 --이렇게만 하면 이 창이 닫힐때까지 원래 창으로 돌아가지 못함 => 그래서 모달리스트 다이얼로그 사용!
-	m_pDlgImage->ShowWindow(SW_SHOW);
-}
+//	m_pDlgImage->ShowWindow(SW_SHOW);
+//}
 
 
 void CgPrjDlg::OnDestroy()
@@ -177,6 +189,7 @@ void CgPrjDlg::OnDestroy()
 
 	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
 	if (m_pDlgImage) delete m_pDlgImage; //메모리 해제
+	if (m_pDlgImgResult) delete m_pDlgImgResult;
 }
 #include <iostream>
 //자식 창이 호출하게할 함수
@@ -184,4 +197,140 @@ void CgPrjDlg::callFunc(int n)
 {
 	int nData = n;
 	std::cout << n << std::endl;
+}
+
+
+void CgPrjDlg::OnBnClickedBtnTest()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	unsigned char* fm = (unsigned char*)m_pDlgImage->m_Image.GetBits();
+
+	//점 찍기를 해보자
+	int nWidth = m_pDlgImage->m_Image.GetWidth();
+	int nHeight = m_pDlgImage->m_Image.GetHeight();
+	int nPitch = m_pDlgImage->m_Image.GetPitch();
+	memset(fm, 0, nWidth * nHeight);
+
+	for (int k = 0; k < MAX_POINT; k++)
+	{
+		int x = rand() % nWidth; //특정 좌표만 
+		int y = rand() % nHeight;
+		fm[y * nPitch + x] = rand()%0xff;
+	}
+
+	//찍은 점 개수 세어보기
+	int nIndex = 0;
+	m_pDlgImgResult->m_nDataCount = 0;
+	for (int j = 0; j < nHeight; j++) { //전체 이미지 훑기
+		for (int i = 0; i < nWidth; i++) { //이때 i랑 j가 좌표~!!
+			if (fm[j * nPitch + i] >100 ) {
+				m_pDlgImgResult->m_ptData[nIndex].x = i;
+				m_pDlgImgResult->m_ptData[nIndex].y = j;
+				m_pDlgImgResult->m_nDataCount = ++nIndex;
+				//std::cout << nIndex << ";" << i << "," << j << std::endl;
+			}
+		}
+	}
+	//std::cout << nSum << std::endl;
+
+	//memset(fm, 0, 640*480);
+
+	m_pDlgImage->Invalidate(); //화면 업데이트
+	m_pDlgImgResult->Invalidate();
+}
+
+#include "CProcess.h"
+#include <chrono> //테스크 타임 관리
+
+using namespace std::chrono;
+
+void CgPrjDlg::OnBnClickedBtnProcess()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	//이미지 프로세싱
+	CProcess process;
+
+	auto start = std::chrono::system_clock::now(); //현재 시간 저장
+	int nRet = process.getStarInfo(&m_pDlgImage->m_Image); //nTh = 100(디폴트 매개변수)
+	auto end = std::chrono::system_clock::now();
+	auto millisec = std::chrono::duration_cast<std::chrono::milliseconds>(end - start); //경과 시간
+	//end-start = 경과 시간!!
+	std::cout << nRet<<"\t"<<millisec.count() << std::endl;
+}
+
+
+void CgPrjDlg::OnBnClickedBtnMakePattern()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	//패턴 만들기
+	unsigned char* fm = (unsigned char*)m_pDlgImage->m_Image.GetBits();
+	int nWidth = m_pDlgImage->m_Image.GetWidth();
+	int nHeight = m_pDlgImage->m_Image.GetHeight();
+	int nPitch = m_pDlgImage->m_Image.GetPitch();
+	memset(fm, 0, nWidth * nHeight);
+
+	//일정 영역에 패턴 만들기
+	CRect rect(100, 200, 150, 400); //영역 지정
+	for (int j = rect.top; j < rect.bottom; j++) {
+		for (int i = rect.left; i < rect.right; i++) {
+			fm[j * nPitch + i] = rand()%256;
+		}
+	}
+	m_pDlgImage->Invalidate();
+}
+
+
+void CgPrjDlg::OnBnClickedBtnGetData()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	unsigned char* fm = (unsigned char*)m_pDlgImage->m_Image.GetBits();
+	int nWidth = m_pDlgImage->m_Image.GetWidth();
+	int nHeight = m_pDlgImage->m_Image.GetHeight();
+	int nPitch = m_pDlgImage->m_Image.GetPitch();
+
+	//특정 영역의 중앙 좌표(무게 중심) 구하기
+	int nTh = 0x80;
+	CRect rect(0,0,nWidth,nHeight);
+	int nSumX = 0;
+	int nSumY = 0;
+	int nCount = 0;
+	for (int j = rect.top; j < rect.bottom; j++) {
+		for (int i = rect.left; i < rect.right; i++) {
+			if (fm[j * nPitch + i] > nTh) {
+				nSumX += i;
+				nSumY += j;
+				nCount++;
+			}
+		}
+	}
+
+	double dCenterX = (double)nSumX / nCount;
+	double dCenterY = (double)nSumY / nCount;
+
+	std::cout << dCenterX << "\t" << dCenterY << std::endl;
+}
+
+
+void CgPrjDlg::OnBnClickedBtnThread()
+{
+	auto start = system_clock::now(); //시작 시간
+
+	//스레드 코드
+	int nImgSize = 4096 * 4;
+	CRect rect(0, 0, nImgSize, nImgSize);//분할 영역
+	CRect rt[4]; //4 영역으로 분할
+	//rt[0].SetRect(0, 0, nImgSize, nImgSize);
+	//rt[1].SetRect(nImgSize, 0, nImgSize*2, nImgSize);
+	//rt[2].SetRect(0, nImgSize, nImgSize, nImgSize*2);
+	//rt[3].SetRect(nImgSize, nImgSize, nImgSize*2, nImgSize);
+	for (int k = 0; k < 4; k++)
+	{
+		rt[k] = rect; //처음 만든 영역 가져오기
+		rt[k].OffsetRect(nImgSize * (k % 2), nImgSize * (k / 2)); //일정 영역만큼 움직이라 
+	}
+
+
+	auto end = system_clock::now(); //종료 시간
+	auto millisec = duration_cast<milliseconds>(end - start);
+	std::cout << millisec.count() << std::endl;
 }

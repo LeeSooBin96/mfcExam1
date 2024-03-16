@@ -14,6 +14,7 @@ public:
 	CgPrjDlg(CWnd* pParent = nullptr);	// 표준 생성자입니다.
 
 	CDlgImage* m_pDlgImage; //동적으로 대화창 생성(모달리스트)
+	CDlgImage* m_pDlgImgResult;
 
 // 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME
@@ -35,8 +36,13 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
-	afx_msg void OnBnClickedBtnDlg();
+//	afx_msg void OnBnClickedBtnDlg();
 	afx_msg void OnDestroy();
 
 	void callFunc(int n);
+	afx_msg void OnBnClickedBtnTest();
+	afx_msg void OnBnClickedBtnProcess();
+	afx_msg void OnBnClickedBtnMakePattern();
+	afx_msg void OnBnClickedBtnGetData();
+	afx_msg void OnBnClickedBtnThread();
 };

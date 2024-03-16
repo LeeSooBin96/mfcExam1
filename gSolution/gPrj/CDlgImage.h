@@ -14,6 +14,8 @@ public:
 
 	CImage m_Image; //이미지 변수
 	CWnd* m_pParent; //윈도위 형태의 포인터! 부모 창 가리키기 위함
+	int m_nDataCount = 0; //몇개를 그릴건지
+	CPoint m_ptData[100]; //좌표 정보
 
 // 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME
@@ -28,6 +30,7 @@ public:
 	afx_msg void OnBnClickedBtnUpParent();
 	virtual BOOL OnInitDialog();
 	afx_msg void OnPaint();
-
+private:
 	void InitImage();
+	void drawData(CDC* pDC);
 };
