@@ -78,3 +78,56 @@ void CimageDlg::OnPaint() //화면이 갱신될 필요가 있을때 자동 호�
 	}
 	// 그리기 메시지에 대해서는 CDialogEx::OnPaint()을(를) 호출하지 마십시오.
 }
+
+void CimageDlg::drawCircle(int nCenX1, int nCenY1, int nRadius)
+{
+	int nWidth = m_image.GetWidth();
+	int nHeight = m_image.GetHeight();
+	int nPitch = m_image.GetPitch();
+
+	unsigned char* fm = (unsigned char*)m_image.GetBits(); //이미지 포인터 가져오기
+	memset(fm, 0xff, nWidth * nHeight);
+	for (int j = nCenY1-nRadius;j < nCenY1 + nRadius;j++) {
+		for (int i = nCenX1-nRadius;i < nCenX1 + nRadius;i++) {
+			if(isInCircle(i,j,nCenX1,nCenY1,nRadius)) //원 조건에 맞으면
+				fm[j * nPitch + i] = 0; //검은색으로 그리자
+		}
+	}
+
+	//이미지 저장해야한다. (파일명: nCenX1bynCenY1.bmp)
+	CString strFileName;
+	strFileName.Format(_T("..//Image/%dby%d.bmp"), nCenX1, nCenY1);
+	m_image.Save(strFileName); //프로젝트 파일의 Image폴더 안에 저장
+
+	updateDisplay();
+}
+
+bool CimageDlg::isInCircle(int i, int j, int nCenterX, int nCenterY, int nRadius)
+{
+	bool bRet = false;
+
+	double dX = i - nCenterX;
+	double dY = j - nCenterY;
+	double dDist = dX * dX + dY * dY;
+	//거리벡터값이 반지름보다 작거나 같으면
+	if (dDist <= nRadius * nRadius) bRet = true; 
+
+	return bRet;
+}
+
+void CimageDlg::loadImage(int nCenterX, int nCenterY)
+{
+	if (m_image != NULL) m_image.Destroy();
+	CString strFileName;
+	strFileName.Format(_T("..//Image/%dby%d.bmp"), nCenterX, nCenterY);
+	m_image.Load(strFileName);
+
+	updateDisplay();
+}
+
+void CimageDlg::updateDisplay()
+{
+	//화면 업데이트
+	CClientDC dc(this);
+	m_image.Draw(dc, 0, 0);
+}

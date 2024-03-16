@@ -187,5 +187,21 @@ void CmfcExamPjDlg::OnBnClickedBtnExcute()
 	int nY2 = GetDlgItemInt(IDC_EDIT_Y2);
 	int nRadius = GetDlgItemInt(IDC_EDIT_RADIUS);
 
+	int nTerm = 10; //이동 간격
+	for (int i = nX1, j = nY1;;) {
+		m_pImgDlg->drawCircle(i, j, nRadius);
+		if (i == nX2 && j == nY2) break; //목적지 좌표면 반복문 탈출
+		if (i < nX2 - nTerm) i += nTerm;
+		else i = nX2; //범위 넘어가면 목적지 좌표
+		if (j < nY2 - nTerm) j += nTerm;
+		else j = nY2; //범위 넘어가면 목적지 좌표
+	}
 
+	int nRNum = rand() % (nX2 - nX1);
+	int nCenterX = nX1 + (nRNum / 10) * 10;
+	int nCenterY = nY1 + (nRNum / 10) * 10;
+	if (nCenterX > nX2) nCenterX = nX2;
+	if (nCenterY > nY2) nCenterY = nY2;
+	m_pImgDlg->loadImage(nCenterX, nCenterY);
+	std::cout << "원의 중앙 좌표 : " << nCenterX << ", " << nCenterY << std::endl;
 }

@@ -16,7 +16,14 @@ public:
 	virtual ~CimageDlg();
 
 	//필요한 함수(메서드)
+	void drawCircle(int nX1,int nY1,int nRadius);
+	void loadImage(int nCenterX,int nCenterY);
+
+private:
 	void initImage(); //이미지 초기화 메소드
+	void updateDisplay(); //이미지창 갱신
+	//원 안에 있는지 조건 검사
+	bool isInCircle(int i, int j, int nCenterX, int nCenterY, int nRadius);
 
 // 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME
