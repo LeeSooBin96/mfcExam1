@@ -22,6 +22,8 @@ public:
 private:
 	void initImage(); //이미지 초기화 메소드
 	void updateDisplay(); //이미지창 갱신
+	//영역 안인지 검사
+	bool isInArea(int i, int j);
 	//원 안에 있는지 조건 검사
 	bool isInCircle(int i, int j, int nCenterX, int nCenterY, int nRadius);
 

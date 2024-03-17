@@ -1,29 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\",
+  "WorkspaceRootPath": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|solutionrelative:mfcExamPj\\mfcExamPjDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|solutionrelative:mfcExamPj\\CimageDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|solutionrelative:mfcExamPj\\CimageDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     ",
+      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|solutionrelative:mfcExamPj\\mfcExamPjDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     ",
       "RelativeMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|solutionrelative:mfcExamPj\\mfcExamPj.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     "
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|solutionrelative:mfcExamPj\\mfcExamPjDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0087 2$  \u0022     ",
+      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0087 2$  \u0022     ",
       "RelativeMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|solutionrelative:mfcExamPj\\mfcExamPj.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0087 2$  \u0022     "
     }
   ],
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -44,36 +44,35 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "mfcExamPj.rc - IDD_MFCEXAMPJ_DIALOG - Dialog",
-              "DocumentMoniker": "C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc",
+              "DocumentMoniker": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc",
               "RelativeDocumentMoniker": "mfcExamPj\\mfcExamPj.rc",
               "ToolTip": "C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc - IDD_MFCEXAMPJ_DIALOG - Dialog",
-              "RelativeToolTip": "mfcExamPj\\mfcExamPj.rc - IDD_MFCEXAMPJ_DIALOG - Dialog",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc - IDD_MFCEXAMPJ_DIALOG - Dialog",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-03-16T08:50:19.545Z",
-              "EditorCaption": " - IDD_MFCEXAMPJ_DIALOG - Dialog"
+              "WhenOpened": "2024-03-16T08:50:19.545Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "CimageDlg.cpp",
-              "DocumentMoniker": "C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.cpp",
+              "DocumentMoniker": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.cpp",
               "RelativeDocumentMoniker": "mfcExamPj\\CimageDlg.cpp",
-              "ToolTip": "C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.cpp",
+              "ToolTip": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.cpp",
               "RelativeToolTip": "mfcExamPj\\CimageDlg.cpp",
-              "ViewState": "AQIAAGgAAAAAAAAAAAAkwHcAAAABAAAA",
+              "ViewState": "AQIAAE0AAAAAAAAAAADwv2gAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-16T08:18:15.582Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "mfcExamPjDlg.cpp",
-              "DocumentMoniker": "C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.cpp",
+              "DocumentMoniker": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.cpp",
               "RelativeDocumentMoniker": "mfcExamPj\\mfcExamPjDlg.cpp",
-              "ToolTip": "C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.cpp",
+              "ToolTip": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.cpp",
               "RelativeToolTip": "mfcExamPj\\mfcExamPjDlg.cpp",
-              "ViewState": "AQIAALUAAAAAAAAAAAAkwMsAAAAkAAAA",
+              "ViewState": "AQIAAKwAAAAAAAAAAAAkwMAAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-16T08:10:19.936Z",
               "EditorCaption": ""
@@ -82,9 +81,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "mfcExamPjDlg.h",
-              "DocumentMoniker": "C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.h",
+              "DocumentMoniker": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.h",
               "RelativeDocumentMoniker": "mfcExamPj\\mfcExamPjDlg.h",
-              "ToolTip": "C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.h",
+              "ToolTip": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.h",
               "RelativeToolTip": "mfcExamPj\\mfcExamPjDlg.h",
               "ViewState": "AQIAABIAAAAAAAAAAAAAACgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -92,13 +91,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "CimageDlg.h",
-              "DocumentMoniker": "C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.h",
+              "DocumentMoniker": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.h",
               "RelativeDocumentMoniker": "mfcExamPj\\CimageDlg.h",
-              "ToolTip": "C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.h",
+              "ToolTip": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.h",
               "RelativeToolTip": "mfcExamPj\\CimageDlg.h",
-              "ViewState": "AQIAAAIAAAAAAAAAAAA4wBcAAAABAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAcwBgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-03-16T08:17:27.803Z",
               "EditorCaption": ""
@@ -107,13 +106,12 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "mfcExamPj.rc - IDD_CimageDlg - Dialog",
-              "DocumentMoniker": "C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc",
+              "DocumentMoniker": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc",
               "RelativeDocumentMoniker": "mfcExamPj\\mfcExamPj.rc",
               "ToolTip": "C:\\Users\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc - IDD_CimageDlg - Dialog",
-              "RelativeToolTip": "mfcExamPj\\mfcExamPj.rc - IDD_CimageDlg - Dialog",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\HAPPYFAMILY\\OneDrive\\\uBB38\uC11C\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc - IDD_CimageDlg - Dialog",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-03-16T08:17:42.543Z",
-              "EditorCaption": " - IDD_CimageDlg - Dialog"
+              "WhenOpened": "2024-03-16T08:17:42.543Z"
             }
           ]
         }

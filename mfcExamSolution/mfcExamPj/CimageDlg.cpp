@@ -89,7 +89,7 @@ void CimageDlg::drawCircle(int nCenX1, int nCenY1, int nRadius)
 	memset(fm, 0xff, nWidth * nHeight);
 	for (int j = nCenY1-nRadius;j < nCenY1 + nRadius;j++) {
 		for (int i = nCenX1-nRadius;i < nCenX1 + nRadius;i++) {
-			if(isInCircle(i,j,nCenX1,nCenY1,nRadius)) //원 조건에 맞으면
+			if(isInArea(i,j)&&isInCircle(i,j,nCenX1,nCenY1,nRadius)) //영역 안이고, 원 조건에 맞으면
 				fm[j * nPitch + i] = 0; //검은색으로 그리자
 		}
 	}
@@ -100,6 +100,15 @@ void CimageDlg::drawCircle(int nCenX1, int nCenY1, int nRadius)
 	m_image.Save(strFileName); //프로젝트 파일의 Image폴더 안에 저장
 
 	updateDisplay();
+}
+
+bool CimageDlg::isInArea(int i, int j)
+{
+	int nWidth = m_image.GetWidth();
+	int nHeight = m_image.GetHeight();
+
+	CRect rect(0, 0, nWidth, nHeight); //영역 생성
+	return rect.PtInRect(CPoint(i, j)); //영역 안에 있는지 검사
 }
 
 bool CimageDlg::isInCircle(int i, int j, int nCenterX, int nCenterY, int nRadius)
@@ -117,12 +126,14 @@ bool CimageDlg::isInCircle(int i, int j, int nCenterX, int nCenterY, int nRadius
 
 void CimageDlg::loadImage(int nCenterX, int nCenterY)
 {
-	if (m_image != NULL) m_image.Destroy();
+	if (m_image != NULL) m_image.Destroy(); //기존 이미지 제거
 	CString strFileName;
 	strFileName.Format(_T("..//Image/%dby%d.bmp"), nCenterX, nCenterY);
 	m_image.Load(strFileName);
 
 	updateDisplay();
+	m_image.Destroy(); //로드한 이미지 제거
+	initImage(); //이미지 다시 초기화 -- 이 두 단계있어야 여러번 돌려도 안터짐!
 }
 
 void CimageDlg::updateDisplay()

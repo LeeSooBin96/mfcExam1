@@ -186,20 +186,24 @@ void CmfcExamPjDlg::OnBnClickedBtnExcute()
 	int nX2 = GetDlgItemInt(IDC_EDIT_X2);
 	int nY2 = GetDlgItemInt(IDC_EDIT_Y2);
 	int nRadius = GetDlgItemInt(IDC_EDIT_RADIUS);
-
 	int nTerm = 10; //이동 간격
+
+	if (nX1 > nX2) nTerm = -10;
 	for (int i = nX1, j = nY1;;) {
 		m_pImgDlg->drawCircle(i, j, nRadius);
 		if (i == nX2 && j == nY2) break; //목적지 좌표면 반복문 탈출
-		if (i < nX2 - nTerm) i += nTerm;
+
+		if ((nTerm > 0) ? (i < nX2 - nTerm) : (i > nX2 - nTerm)) i += nTerm;
 		else i = nX2; //범위 넘어가면 목적지 좌표
-		if (j < nY2 - nTerm) j += nTerm;
+		if ((nTerm > 0) ? (i < nY2 - nTerm) : (i > nY2 - nTerm)) j += nTerm;
 		else j = nY2; //범위 넘어가면 목적지 좌표
 	}
 
+	//랜덤 이미지 로드 - 랜덤 좌표 값의 이미지 로드
+	srand(time(NULL)); //랜덤 시드값 초기화
 	int nRNum = rand() % (nX2 - nX1);
-	int nCenterX = nX1 + (nRNum / 10) * 10;
-	int nCenterY = nY1 + (nRNum / 10) * 10;
+	int nCenterX = nX1 + (nRNum / abs(nTerm)) * abs(nTerm);
+	int nCenterY = nY1 + (nRNum / abs(nTerm)) * abs(nTerm);
 	if (nCenterX > nX2) nCenterX = nX2;
 	if (nCenterY > nY2) nCenterY = nY2;
 	m_pImgDlg->loadImage(nCenterX, nCenterY);
