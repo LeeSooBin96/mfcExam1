@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\gSolution\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A966ED41-AB1E-4B6F-82E2-EDD19AAD925E}|gPrj\\gPrj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\gSolution\\gPrj\\gPrjDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A966ED41-AB1E-4B6F-82E2-EDD19AAD925E}|gPrj\\gPrj.vcxproj|solutionrelative:gPrj\\gPrjDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A966ED41-AB1E-4B6F-82E2-EDD19AAD925E}|gPrj\\gPrj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\gSolution\\gPrj\\CDlgImage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A966ED41-AB1E-4B6F-82E2-EDD19AAD925E}|gPrj\\gPrj.vcxproj|solutionrelative:gPrj\\CDlgImage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A966ED41-AB1E-4B6F-82E2-EDD19AAD925E}|gPrj\\gPrj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\gSolution\\gPrj\\CDlgImage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A966ED41-AB1E-4B6F-82E2-EDD19AAD925E}|gPrj\\gPrj.vcxproj|solutionrelative:gPrj\\CDlgImage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A966ED41-AB1E-4B6F-82E2-EDD19AAD925E}|gPrj\\gPrj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\gSolution\\gPrj\\gPrjDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A966ED41-AB1E-4B6F-82E2-EDD19AAD925E}|gPrj\\gPrj.vcxproj|solutionrelative:gPrj\\gPrjDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A966ED41-AB1E-4B6F-82E2-EDD19AAD925E}|gPrj\\gPrj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\gSolution\\gPrj\\gPrjDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,32 +66,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CDlgImage.cpp",
               "DocumentMoniker": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\gSolution\\gPrj\\CDlgImage.cpp",
               "RelativeDocumentMoniker": "gPrj\\CDlgImage.cpp",
               "ToolTip": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\gSolution\\gPrj\\CDlgImage.cpp",
               "RelativeToolTip": "gPrj\\CDlgImage.cpp",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAAAFsAAAAAAAAA",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAFgAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-15T20:06:06.651Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "gPrjDlg.cpp",
               "DocumentMoniker": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\gSolution\\gPrj\\gPrjDlg.cpp",
               "RelativeDocumentMoniker": "gPrj\\gPrjDlg.cpp",
               "ToolTip": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\gSolution\\gPrj\\gPrjDlg.cpp",
               "RelativeToolTip": "gPrj\\gPrjDlg.cpp",
-              "ViewState": "AQIAADsBAAAAAAAAAAAAAA4AAABGAAAA",
+              "ViewState": "AQIAAIEAAAAAAAAAAAAAABMBAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-03-15T12:10:31.409Z"
+              "WhenOpened": "2024-03-15T12:10:31.409Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CDlgImage.h",
               "DocumentMoniker": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\gSolution\\gPrj\\CDlgImage.h",
               "RelativeDocumentMoniker": "gPrj\\CDlgImage.h",
@@ -99,8 +100,7 @@
               "RelativeToolTip": "gPrj\\CDlgImage.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-15T12:16:10.615Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-15T12:16:10.615Z"
             },
             {
               "$type": "Document",

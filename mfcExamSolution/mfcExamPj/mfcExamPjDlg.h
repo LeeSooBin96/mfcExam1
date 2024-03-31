@@ -11,12 +11,11 @@ class CmfcExamPjDlg : public CDialogEx
 private:
 	CimageDlg* m_pImgDlg; //동적으로 생성하기 위한 대화창 포인터
 
-	void movingCircle(int nTerm,int nX1,int nY1,int nX2,int nY2,int nRadius); //움직이는 원그리기
-	void LoadRandomIMG(int nX1, int nY1, int nX2, int nY2,int nRadius, int nTerm); //랜덤하게 이미지 로드
+	void movingCircle(int nX1,int nY1,int nX2,int nY2,int nRadius,int nTermX,int nTermY); //움직이는 원그리기
 	bool isInArea(int nX, int nY, int nRadius); //원 중앙좌표값이 영역안인지 확인
 	bool isInScope(int i, int nX, int nTerm); //범위 안인지 검사
-	bool isValidX(int x); //유효한 x좌표인지 검사
-	bool isValidY(int y); //유효한 y좌표인지 검사
+	bool isValidX(int x,int nRadius); //유효한 x좌표인지 검사
+	bool isValidY(int y,int nRadius); //유효한 y좌표인지 검사
 
 // 생성입니다.
 public:

@@ -6,6 +6,7 @@
 #include "afxdialogex.h"
 #include "CimageDlg.h"
 
+#define WHITE_NUM 0xff
 #define GRAY_NUM 0 //배경 색상
 #define PEN_COLOR RGB(0xff,0xff,0) //펜 색상
 // CimageDlg 대화 상자
@@ -65,7 +66,7 @@ void CimageDlg::initImage() //이미지 초기화 메소드
 
 	//이미지 포인터 가져오기(바이트 배열의 첫요소의 주소를 받아온다)
 	unsigned char* fm = (unsigned char*)m_image.GetBits();
-	memset(fm, 0xff, nWidth * nHeight); //White로 설정
+	memset(fm, WHITE_NUM, nWidth * nHeight); //White로 설정
 }
 
 void CimageDlg::OnPaint() //화면이 갱신될 필요가 있을때 자동 호출
@@ -79,25 +80,24 @@ void CimageDlg::OnPaint() //화면이 갱신될 필요가 있을때 자동 호�
 }
 
 //(nCenX,nCenY) 좌표에 원그리기
-void CimageDlg::drawCircle(int nCenX, int nCenY, int nRadius)
+void CimageDlg::drawCircle(int nCenX, int nCenY)
 {
 	int nWidth = m_image.GetWidth();
 	int nHeight = m_image.GetHeight();
 	int nPitch = m_image.GetPitch();
-	m_nRadius = nRadius; //반지름 저장
 
 	unsigned char* fm = (unsigned char*)m_image.GetBits(); //이미지 포인터 가져오기
-	memset(fm, 0xff, nWidth * nHeight);
-	for (int j = nCenY-nRadius;j < nCenY + nRadius;j++) {
-		for (int i = nCenX-nRadius;i < nCenX + nRadius;i++) {
-			if(isInArea(i,j)&&isInCircle(i,j,nCenX,nCenY,nRadius)) //영역 안이고, 원 조건에 맞으면
+	for (int j = nCenY-m_nRadius;j < nCenY + m_nRadius;j++) {
+		for (int i = nCenX-m_nRadius;i < nCenX + m_nRadius;i++) {
+			if(isInArea(i,j)&&isInCircle(i,j,nCenX,nCenY,m_nRadius)) //영역 안이고, 원 조건에 맞으면
 				fm[j * nPitch + i] = GRAY_NUM; //검은색으로 그리자
 		}
 	}
 	
-	SaveImage(nCenX, nCenY); //이미지 파일로 저장
+	SaveImage(); //이미지 파일로 저장
 
 	updateDisplay(); //화면 업데이트
+	memset(fm, 0xff, nWidth * nHeight); //이미지 초기화
 }
 //영역안에 있는지 검사
 bool CimageDlg::isInArea(int i, int j)
@@ -122,21 +122,22 @@ bool CimageDlg::isInCircle(int i, int j, int nCenterX, int nCenterY, int nRadius
 	return bRet;
 }
 //이미지 파일 저장
-void CimageDlg::SaveImage(int nCenX, int nCenY)
+void CimageDlg::SaveImage()
 {
-	//이미지 저장해야한다. (파일명: nCenX1bynCenY1.bmp)
+	//이미지 저장해야한다. (파일명: num.bmp)
 	CString strFileName;
-	strFileName.Format(_T("..//Image/%dby%d.bmp"), nCenX, nCenY);
+	strFileName.Format(_T("..//Image/IMG%d.bmp"),++m_nIMGNum);
 	m_image.Save(strFileName); //프로젝트 파일의 Image폴더 안에 저장
 }
 //이미지 파일 로드
-void CimageDlg::loadImage(int nCenterX, int nCenterY)
+void CimageDlg::loadImage()
 {
 	if (m_image != NULL) m_image.Destroy(); //기존 이미지 제거
 	CString strFileName;
-	strFileName.Format(_T("..//Image/%dby%d.bmp"), nCenterX, nCenterY);
+	strFileName.Format(_T("..//Image/IMG%d.bmp"), rand()%m_nIMGNum+1);
 	m_image.Load(strFileName);
 	focusCircle(); //원 중앙에 십자 표시와 외곽선 그리기
+	m_nIMGNum = 0; //이미지 수 초기화
 }
 //화면 갱신
 void CimageDlg::updateDisplay()
@@ -172,6 +173,7 @@ void CimageDlg::focusCircle()
 	//중앙 좌표 저장
 	m_nCenterX = (int)round((double)nSumX / nCount);
 	m_nCenterY = (int)round((double)nSumY / nCount);
+	std::cout << "로드된 원의 중앙 좌표: ( " << m_nCenterX << ", " << m_nCenterY << " )\n";
 
 	m_bExistData = true; //원 중앙 십자 표시와 외곽선 그리게함
 	updateDisplay();
@@ -199,3 +201,4 @@ void CimageDlg::drawData(CDC* pDc)
 	m_image.Destroy(); //로드한 이미지 제거
 	initImage(); //이미지 다시 초기화 -- 이 두 단계있어야 여러번 돌려도 안터짐!
 }
+  

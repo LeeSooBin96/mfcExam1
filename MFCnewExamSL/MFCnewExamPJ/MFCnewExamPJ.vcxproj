@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{E6414301-3E78-411B-BF21-D280B2AED254}</ProjectGuid>
+    <ProjectGuid>{6F0484D7-26EE-4C58-AB7D-3568AD0E83BF}</ProjectGuid>
     <Keyword>MFCProj</Keyword>
-    <RootNamespace>mfcExamPj</RootNamespace>
+    <RootNamespace>MFCnewExamPJ</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -185,16 +185,16 @@
   <ItemGroup>
     <ClInclude Include="CimageDlg.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="mfcExamPj.h" />
-    <ClInclude Include="mfcExamPjDlg.h" />
+    <ClInclude Include="MFCnewExamPJ.h" />
+    <ClInclude Include="MFCnewExamPJDlg.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CimageDlg.cpp" />
-    <ClCompile Include="mfcExamPj.cpp" />
-    <ClCompile Include="mfcExamPjDlg.cpp" />
+    <ClCompile Include="MFCnewExamPJ.cpp" />
+    <ClCompile Include="MFCnewExamPJDlg.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -203,14 +203,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="mfcExamPj.rc" />
+    <ResourceCompile Include="MFCnewExamPJ.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\mfcExamPj.rc2" />
+    <None Include="res\MFCnewExamPJ.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\logo_kr.png" />
-    <Image Include="res\mfcExamPj.ico" />
+    <Image Include="res\MFCnewExamPJ.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
