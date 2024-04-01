@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|solutionrelative:mfcExamPj\\mfcExamPjDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|solutionrelative:mfcExamPj\\CimageDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|solutionrelative:mfcExamPj\\CimageDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|solutionrelative:mfcExamPj\\mfcExamPjDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E6414301-3E78-411B-BF21-D280B2AED254}|mfcExamPj\\mfcExamPj.vcxproj|C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,13 +42,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "mfcExamPjDlg.cpp",
               "DocumentMoniker": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.cpp",
               "RelativeDocumentMoniker": "mfcExamPj\\mfcExamPjDlg.cpp",
               "ToolTip": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPjDlg.cpp",
               "RelativeToolTip": "mfcExamPj\\mfcExamPjDlg.cpp",
-              "ViewState": "AQIAAKIAAAAAAAAAAAAAAHUAAAAsAAAA",
+              "ViewState": "AQIAAMAAAAAAAAAAAAAAAOAAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-16T08:10:19.936Z",
               "EditorCaption": ""
@@ -63,31 +63,30 @@
               "RelativeToolTip": "mfcExamPj\\mfcExamPjDlg.h",
               "ViewState": "AQIAAAUAAAAAAAAAAAAAABEAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-16T08:41:32.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-16T08:41:32.031Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "CimageDlg.cpp",
               "DocumentMoniker": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.cpp",
               "RelativeDocumentMoniker": "mfcExamPj\\CimageDlg.cpp",
               "ToolTip": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.cpp",
               "RelativeToolTip": "mfcExamPj\\CimageDlg.cpp",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEQAAAAqAAAA",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAAALYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-16T08:18:15.582Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "CimageDlg.h",
               "DocumentMoniker": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.h",
               "RelativeDocumentMoniker": "mfcExamPj\\CimageDlg.h",
               "ToolTip": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\CimageDlg.h",
               "RelativeToolTip": "mfcExamPj\\CimageDlg.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAPAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-03-16T08:17:27.803Z",
               "EditorCaption": ""
@@ -101,8 +100,7 @@
               "ToolTip": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc - IDD_CimageDlg - Dialog",
               "RelativeToolTip": "mfcExamPj\\mfcExamPj.rc - IDD_CimageDlg - Dialog",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-03-16T08:17:42.543Z",
-              "EditorCaption": " - IDD_CimageDlg - Dialog"
+              "WhenOpened": "2024-03-16T08:17:42.543Z"
             },
             {
               "$type": "Document",
@@ -113,8 +111,7 @@
               "ToolTip": "C:\\Users\\Aiot\\Documents\\GitHub\\mfcExam1\\mfcExamSolution\\mfcExamPj\\mfcExamPj.rc - IDD_MFCEXAMPJ_DIALOG - Dialog",
               "RelativeToolTip": "mfcExamPj\\mfcExamPj.rc - IDD_MFCEXAMPJ_DIALOG - Dialog",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-03-16T08:50:19.545Z",
-              "EditorCaption": " - IDD_MFCEXAMPJ_DIALOG - Dialog"
+              "WhenOpened": "2024-03-16T08:50:19.545Z"
             }
           ]
         }

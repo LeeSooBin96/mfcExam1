@@ -9,6 +9,14 @@
 class CMFCnewExamPJDlg : public CDialogEx
 {
 	CimageDlg* m_pImgDlg; //동적으로 생성하기 위한 대화창 포인터
+	bool m_bDraw = false; //draw 버튼 클릭 여부 확인
+	
+	//유효한 x좌표 값인지 검사
+	bool isValidX(int x);
+	//유효한 y좌표 값인지 검사
+	bool isValidY(int y);
+	//원의 중심이 이미지 영역 내에 있는지 검사
+	bool isCenterInArea(int x, int y, int radius);
 
 // 생성입니다.
 public:
@@ -36,4 +44,6 @@ protected:
 public:
 	afx_msg void OnDestroy();
 	afx_msg void OnBnClickedBtnDraw();
+	afx_msg void OnBnClickedBtnAction();
+	afx_msg void OnBnClickedBtnOpen();
 };

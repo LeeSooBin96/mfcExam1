@@ -68,6 +68,8 @@ BEGIN_MESSAGE_MAP(CMFCnewExamPJDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_WM_DESTROY()
 	ON_BN_CLICKED(IDC_BTN_DRAW, &CMFCnewExamPJDlg::OnBnClickedBtnDraw)
+	ON_BN_CLICKED(IDC_BTN_ACTION, &CMFCnewExamPJDlg::OnBnClickedBtnAction)
+	ON_BN_CLICKED(IDC_BTN_OPEN, &CMFCnewExamPJDlg::OnBnClickedBtnOpen)
 END_MESSAGE_MAP()
 
 
@@ -107,7 +109,7 @@ BOOL CMFCnewExamPJDlg::OnInitDialog()
 	m_pImgDlg = new CimageDlg; //new 연산자 사용시 delete 잊지 말기
 	m_pImgDlg->Create(IDD_CimageDlg, this); //ID와 부모 다이얼로그 등록
 	m_pImgDlg->ShowWindow(SW_SHOW); //모달리스트 대화창 생성
-	m_pImgDlg->MoveWindow(20, 20, 640, 480); //창 이동 및 크기조절
+	m_pImgDlg->MoveWindow(20, 20, 650, 490); //창 이동 및 크기조절
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
 
@@ -170,12 +172,95 @@ void CMFCnewExamPJDlg::OnDestroy()
 	if (m_pImgDlg != NULL) delete m_pImgDlg;
 }
 
-
 void CMFCnewExamPJDlg::OnBnClickedBtnDraw()
 {
 	//draw 버튼 클릭 시
+	srand(time(NULL)); //랜덤 시드값 초기화
+
+	int nX1 = GetDlgItemInt(IDC_EDIT_X1);
+	int nY1 = GetDlgItemInt(IDC_EDIT_Y1);
+	if (!isValidX(nX1) || !isValidY(nY1)) {
+		AfxMessageBox(_T("좌표 값이 범위를 벗어났습니다. \n 0<X1<640 ,0<Y1<480"));
+		return;
+	}
+	int nRadius = rand()%50+1; //원의 반지름 랜덤 지정 (1~ 50)
+	//원이 영역 안에 있을 수 있는 반지름  찾기
+	while(!isCenterInArea(nX1,nY1,nRadius)) nRadius = rand() % 50 + 1;
+	m_pImgDlg->m_nRadius = nRadius; //생성된 반지름 저장
+	m_pImgDlg->m_nIMGNum = 0; //생성된 이미지 수 초기화
+	
+	m_pImgDlg->drawCircle(nX1, nY1);
+	m_bDraw = true;
+}
+
+void CMFCnewExamPJDlg::OnBnClickedBtnAction()
+{
+	if (!m_bDraw) {
+		AfxMessageBox(_T("draw 버튼을 먼저 눌러주세요."));
+		return;
+	}
+	//action 버튼 클릭시
 	int nX1 = GetDlgItemInt(IDC_EDIT_X1);
 	int nY1 = GetDlgItemInt(IDC_EDIT_Y1);
 	int nX2 = GetDlgItemInt(IDC_EDIT_X2);
 	int nY2 = GetDlgItemInt(IDC_EDIT_Y2);
+	if (!isValidX(nX1) || !isValidY(nY1) || !isValidX(nX2) || !isValidY(nY2)) {
+		AfxMessageBox(_T("좌표 값이 범위를 벗어났습니다. \n 0<X<640 ,0<Y<480"));
+		return;
+	}
+	//이동 간격
+	int nTermX = (nX1 < nX2) ? 10 : -10;
+	int nTermY = (nY1 < nY2) ? 10 : -10;
+	//원 이동
+	for (int i = nX1, j = nY1;;) {
+		i += nTermX; j += nTermY; //이동
+		if ((nTermX > 0) ? i > nX2:i < nX2) i = nX2; //범위 검사
+		if ((nTermY > 0) ? j > nY2:j < nY2) j = nY2;
+		if (isCenterInArea(i, j, m_pImgDlg->m_nRadius))
+			m_pImgDlg->drawCircle(i, j); //원 그리기
+		if (i == nX2 && j == nY2) break; //목적지에 도착하면 중지
+		m_pImgDlg->saveCircleIMG(); //파일 이미지 저장
+		Sleep(10);
+	}
+
+	m_bDraw = false; 
+}
+
+//원의 중심이 이미지 영역 내에 있는지 검사
+bool CMFCnewExamPJDlg::isCenterInArea(int x, int y, int radius)
+{
+	int nWidth = m_pImgDlg->m_image.GetWidth();
+	int nHeight = m_pImgDlg->m_image.GetHeight();
+	
+	//검사 영역
+	CRect rect(radius-1, radius-1, nWidth - radius+1, nHeight - radius+1);
+	return rect.PtInRect(CPoint(x, y)); //영역 내만 TRUE 경계도 FALSE
+}
+
+//유효한 x좌표 값인지 검사
+bool CMFCnewExamPJDlg::isValidX(int x)
+{
+	return x >0  && x < m_pImgDlg->m_image.GetWidth();
+}
+
+//유효한 y좌표 값인지 검사
+bool CMFCnewExamPJDlg::isValidY(int y)
+{
+	return y > 0 && y < m_pImgDlg->m_image.GetHeight();
+}
+
+
+
+void CMFCnewExamPJDlg::OnBnClickedBtnOpen()
+{
+	//open 버튼 클릭시
+	CString strFileDir;
+
+	CFileDialog fileDlg(TRUE, _T(".bmp"),NULL,0,L"파일선택(*.bmp)|*.bmp;");
+
+	if (fileDlg.DoModal() == IDOK)
+	{
+		strFileDir = fileDlg.GetPathName(); //경로 받기
+		m_pImgDlg->loadCircleIMG(&strFileDir);
+	}
 }
